@@ -418,6 +418,7 @@ tile_set = SubResource("TileSet_ljgoi")
 [node name="Player" parent="." instance=ExtResource("3_vddwb")]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(-7, -7)
 
 [node name="Camera" type="Camera2D" parent="Player"]
 position = Vector2(8, 8)

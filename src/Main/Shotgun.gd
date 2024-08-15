@@ -31,7 +31,6 @@ func _on_player_shoot():
 	
 	# change position to the muzzle
 	muzzleflash.global_position = $Muzzle.global_position
-	muzzleflash.local_coords = false
 	
 	# vector of direction is the velocity, pointing to the mouse
 	var direction : Vector2 = get_global_mouse_position() - global_position
