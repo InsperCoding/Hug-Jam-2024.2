@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bytgq0a43p7gi"]
+
+[ext_resource type="Script" path="res://src/Particles/ParticleHandler.gd" id="1_j3bx8"]
+[ext_resource type="PackedScene" uid="uid://degg2ow1avvix" path="res://src/Particles/muzzleflash.tscn" id="2_ltec5"]
+
+[node name="ParticleHandler" type="Node2D"]
+script = ExtResource("1_j3bx8")
+particle = ExtResource("2_ltec5")
