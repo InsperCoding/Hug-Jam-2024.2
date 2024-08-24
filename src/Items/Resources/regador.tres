@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cr35h5t3u5tk8"]
+
+[ext_resource type="Script" path="res://src/Items/Resources/ItemResource.gd" id="1_j6iaq"]
+[ext_resource type="Texture2D" uid="uid://0jl6fs23f2k5" path="res://assets/Objects/regador.png" id="2_ablo0"]
+
+[resource]
+script = ExtResource("1_j6iaq")
+name = "Regador"
+description = "Um regador"
+sprite = ExtResource("2_ablo0")
