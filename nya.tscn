@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj4lbey5sgeub"]
+
+[ext_resource type="AudioStream" uid="uid://dacpi671yw84j" path="res://NYA.wav" id="1_f3k22"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_f3k22")
+autoplay = true
