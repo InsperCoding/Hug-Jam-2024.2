@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsuts5x0o36kv"]
+
+[ext_resource type="Script" path="res://src/Items/Base/item.gd" id="1_up5pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btr5l"]
+size = Vector2(8, 8)
+
+[node name="Item" type="StaticBody2D"]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("1_up5pi")
+
+[node name="ItemCollision" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_btr5l")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(16, 8)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://celk527n3435a"]
+
+[ext_resource type="Script" path="res://src/Items/Resources/ItemResource.gd" id="1_8wicc"]
+[ext_resource type="Texture2D" uid="uid://4ivtai4u828p" path="res://assets/Objects/shotgun_1.png" id="2_3qhvn"]
+
+[resource]
+script = ExtResource("1_8wicc")
+name = "Caderno"
+description = "Um caderno de estudante"
+sprite = ExtResource("2_3qhvn")
