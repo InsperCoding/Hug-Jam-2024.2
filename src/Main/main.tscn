@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dmyqukdxanu7q"]
+[gd_scene load_steps=34 format=4 uid="uid://dmyqukdxanu7q"]
 
 [ext_resource type="Texture2D" uid="uid://bi7mb07dodj4a" path="res://assets/Objects/grass.png" id="1_7ggx2"]
 [ext_resource type="Texture2D" uid="uid://bkcklv576sr1w" path="res://assets/Objects/tijolos_1.png" id="3_1i4vr"]
@@ -17,6 +17,8 @@
 [ext_resource type="Resource" uid="uid://dney3kxex73b5" path="res://src/Items/Resources/arma.tres" id="9_8euu4"]
 [ext_resource type="Resource" uid="uid://dav41jaucpay0" path="res://src/Items/Resources/gasolina.tres" id="10_rapq8"]
 [ext_resource type="Resource" uid="uid://cr35h5t3u5tk8" path="res://src/Items/Resources/regador.tres" id="11_fqcfp"]
+[ext_resource type="Script" path="res://src/Officer/hurtbox.gd" id="13_guiid"]
+[ext_resource type="PackedScene" uid="uid://bg64t60vjcvpx" path="res://src/Officer/police.tscn" id="14_8fmsg"]
 [ext_resource type="PackedScene" uid="uid://cj4lbey5sgeub" path="res://nya.tscn" id="18_bro57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqu6c"]
@@ -139,6 +141,10 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_pgq3f")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_doi14"]
+radius = 57.0
+height = 150.0
+
 [node name="Main" type="Node2D"]
 
 [node name="Map" type="TileMapLayer" parent="."]
@@ -191,6 +197,17 @@ autostart = true
 wait_time = 75.0
 one_shot = true
 autostart = true
+
+[node name="Hurtbox" type="Area2D" parent="Player"]
+script = ExtResource("13_guiid")
+
+[node name="Hurtbox_shape" type="CollisionShape2D" parent="Player/Hurtbox"]
+position = Vector2(35, 55)
+shape = SubResource("CapsuleShape2D_doi14")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Policia" parent="." instance=ExtResource("14_8fmsg")]
+position = Vector2(-263, -947)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 75.0

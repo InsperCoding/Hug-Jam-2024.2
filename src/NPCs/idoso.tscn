@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://teqn5rb8j8u2"]
+
+[ext_resource type="Texture2D" uid="uid://cou7b84l23et5" path="res://assets/Characters/monkey.png" id="1_wgjir"]
+[ext_resource type="Script" path="res://src/NPCs/npc.gd" id="2_6t52b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g8q3v"]
+radius = 228.256
+height = 561.392
+
+[node name="Idoso" type="Sprite2D"]
+position = Vector2(-1.25, 3.75)
+scale = Vector2(0.369104, 0.353586)
+texture = ExtResource("1_wgjir")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_6t52b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_g8q3v")
