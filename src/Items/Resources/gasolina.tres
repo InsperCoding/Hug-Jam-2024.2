@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dav41jaucpay0"]
 
 [ext_resource type="Script" path="res://src/Items/Resources/ItemResource.gd" id="1_ptw3j"]
-[ext_resource type="Texture2D" uid="uid://cbd6gbnbjy6ul" path="res://assets/Objects/gas.png" id="2_yemxw"]
+[ext_resource type="Texture2D" uid="uid://dx2afs6a3i08w" path="res://assets/Objects/pano.png" id="2_y3h7n"]
 
 [resource]
 script = ExtResource("1_ptw3j")
-name = "Gasolina"
+name = "Pano"
 description = ""
-sprite = ExtResource("2_yemxw")
+sprite = ExtResource("2_y3h7n")

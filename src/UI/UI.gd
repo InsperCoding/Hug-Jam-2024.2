@@ -60,6 +60,12 @@ func _input(event: InputEvent) -> void:
 	elif Input.is_action_just_pressed("inventory2"):
 		globals.inventory_idx = 2
 		set_inventory_idx()
+	elif Input.is_action_just_pressed("inventory3"):
+		globals.inventory_idx = 3
+		set_inventory_idx()
+	elif Input.is_action_just_pressed("inventory4"):
+		globals.inventory_idx = 4
+		set_inventory_idx()
 	elif Input.is_action_just_released("scroll_up"):
 		globals.inventory_idx -= 1
 		set_inventory_idx()
