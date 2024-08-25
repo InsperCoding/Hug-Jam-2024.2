@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://dmyqukdxanu7q"]
+[gd_scene load_steps=42 format=4 uid="uid://dmyqukdxanu7q"]
 
 [ext_resource type="Texture2D" uid="uid://bi7mb07dodj4a" path="res://assets/Objects/grass.png" id="1_7ggx2"]
 [ext_resource type="Script" path="res://src/Main/main.gd" id="1_h8q3d"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dbvi4i4u81rx1" path="res://assets/Objects/barra.png" id="15_05tia"]
 [ext_resource type="PackedScene" uid="uid://cj4lbey5sgeub" path="res://nya.tscn" id="18_bro57"]
 [ext_resource type="Texture2D" uid="uid://dui7uergob75v" path="res://assets/World/tree.png" id="20_ljldi"]
+[ext_resource type="Texture2D" uid="uid://cjup0b4sm6jhy" path="res://assets/World/lago.png" id="22_5w12n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqu6c"]
 texture = ExtResource("1_7ggx2")
@@ -161,6 +162,10 @@ size = Vector2(245, 126)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1cnpt"]
 radius = 24.0064
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjser"]
+radius = 192.49
+height = 384.98
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h8q3d")
@@ -323,5 +328,14 @@ shape = SubResource("RectangleShape2D_jwcq7")
 position = Vector2(-1243, 880)
 scale = Vector2(9.38, 9.38)
 shape = SubResource("CircleShape2D_1cnpt")
+
+[node name="Lago" type="Sprite2D" parent="."]
+position = Vector2(-1013, -845)
+texture = ExtResource("22_5w12n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lago"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lago/StaticBody2D"]
+shape = SubResource("CapsuleShape2D_sjser")
 
 [connection signal="shoot" from="Player" to="Player/Shotgun" method="_on_player_shoot"]
