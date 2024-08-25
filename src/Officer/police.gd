@@ -34,7 +34,7 @@ func new_direction():
 
 
 func _on_hitbox_randomize_punishment():
-	pass # Replace with function body.
+	pass
 
 
 func _on_raio_de_verificação_body_entered(body):

@@ -1,4 +1,5 @@
-extends Sprite2D
+class_name interacao
+extends Area2D
 
-func desaparecer():
-	if 
+func interacao():
+	pass
