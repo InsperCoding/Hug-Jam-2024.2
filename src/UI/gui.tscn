@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck4e40jbt057w"]
 
 [ext_resource type="FontFile" uid="uid://ih60prd568q3" path="res://assets/Daydream.ttf" id="1_7hi1b"]
-[ext_resource type="Script" path="res://src/Main/TimeLabel.gd" id="2_03mj0"]
+[ext_resource type="Script" path="res://src/UI/UI.gd" id="2_03mj0"]
 [ext_resource type="StyleBox" uid="uid://i45xp457ssoy" path="res://src/UI/panelstyle.tres" id="2_f5xfe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lvoog"]
@@ -64,10 +64,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -136.5
-offset_top = -113.0
-offset_right = 136.5
-offset_bottom = -20.0
+offset_left = -180.0
+offset_top = -86.0
+offset_right = 180.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = ExtResource("2_f5xfe")
@@ -82,7 +82,22 @@ theme_override_constants/margin_bottom = 10
 [node name="InventoryBarGrid" type="GridContainer" parent="Control/PanelContainer/InventoryBarMargin"]
 layout_mode = 2
 theme_override_constants/h_separation = 10
-columns = 3
+columns = 5
+
+[node name="Slot0" type="ColorRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.784314, 0.784314, 0.784314, 0.45098)
+
+[node name="Texture" type="TextureRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid/Slot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
 
 [node name="Slot1" type="ColorRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid"]
 layout_mode = 2
@@ -90,14 +105,56 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.466667, 0.466667, 0.466667, 0.45098)
 
+[node name="Texture" type="TextureRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
 [node name="Slot2" type="ColorRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.466667, 0.466667, 0.466667, 0.45098)
 
+[node name="Texture" type="TextureRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
 [node name="Slot3" type="ColorRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.466667, 0.466667, 0.466667, 0.45098)
+color = Color(0.784314, 0.784314, 0.784314, 0.45098)
+
+[node name="Texture" type="TextureRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot4" type="ColorRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.784314, 0.784314, 0.784314, 0.45098)
+
+[node name="Texture" type="TextureRect" parent="Control/PanelContainer/InventoryBarMargin/InventoryBarGrid/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5

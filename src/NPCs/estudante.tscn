@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://diers34m3o1hs"]
+
+[ext_resource type="Texture2D" uid="uid://dwhqbs5sjxn1s" path="res://assets/sprites(temporary)/face.png" id="2_7gmw0"]
+[ext_resource type="Script" path="res://src/NPCs/npc.gd" id="2_gc3rc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tg03q"]
+radius = 246.165
+
+[node name="Estudante" type="Sprite2D"]
+position = Vector2(512.5, 220.5)
+scale = Vector2(0.438511, 0.441748)
+texture = ExtResource("2_7gmw0")
+script = ExtResource("2_gc3rc")
+
+[node name="Area_de_interacao" type="Area2D" parent="."]
+
+[node name="area_de_interacao_colisao" type="CollisionShape2D" parent="Area_de_interacao"]
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_tg03q")
