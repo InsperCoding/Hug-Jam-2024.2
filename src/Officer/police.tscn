@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://bg64t60vjcvpx"]
+
+[ext_resource type="Script" path="res://src/Officer/police.gd" id="1_bwiao"]
+[ext_resource type="Script" path="res://src/Officer/hitbox.gd" id="2_eo1bl"]
+[ext_resource type="Texture2D" uid="uid://dxwscr3w2p5oc" path="res://assets/Characters/dog_walk.png" id="2_xaaq0"]
+[ext_resource type="Script" path="res://src/Officer/raio_de_verificação.gd" id="3_etb3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rt52f"]
+radius = 1718.14
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_beilr"]
+radius = 570.5
+height = 2428.02
+
+[sub_resource type="Animation" id="Animation_07rmc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_75jrc"]
+resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3k4p2"]
+_data = {
+"RESET": SubResource("Animation_07rmc"),
+"walk": SubResource("Animation_75jrc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew08l"]
+size = Vector2(100, 173)
+
+[node name="Policia" type="CharacterBody2D"]
+position = Vector2(-10, -11)
+script = ExtResource("1_bwiao")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(57.5, 97.5)
+scale = Vector2(0.390756, 0.368996)
+texture = ExtResource("2_xaaq0")
+hframes = 2
+
+[node name="raio_de_verificação" type="Area2D" parent="Sprite2D"]
+position = Vector2(-185.169, -313.749)
+collision_mask = 0
+script = ExtResource("3_etb3b")
+
+[node name="Raio de verificação" type="CollisionShape2D" parent="Sprite2D/raio_de_verificação"]
+position = Vector2(198.508, 323.499)
+rotation = 0.0177403
+scale = Vector2(0.451955, 0.48922)
+shape = SubResource("CircleShape2D_rt52f")
+debug_color = Color(0, 0.461534, 0.992915, 0.419608)
+
+[node name="hitbox" type="Area2D" parent="Sprite2D"]
+position = Vector2(-114.507, -437.907)
+rotation = 0.0547143
+scale = Vector2(0.28094, 0.226294)
+skew = 0.00975704
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_eo1bl")
+
+[node name="Hitbox_area" type="CollisionShape2D" parent="Sprite2D/hitbox"]
+position = Vector2(536.805, 1972.24)
+rotation = -0.0827876
+scale = Vector2(0.999518, 1.00057)
+skew = -0.0135522
+shape = SubResource("CapsuleShape2D_beilr")
+debug_color = Color(0.87451, 0.0784314, 0, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3k4p2")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(58, 98.5)
+shape = SubResource("RectangleShape2D_ew08l")
+debug_color = Color(0, 1, 0, 0.419608)
+
+[connection signal="body_entered" from="Sprite2D/raio_de_verificação" to="." method="_on_raio_de_verificação_body_entered"]
+[connection signal="body_exited" from="Sprite2D/raio_de_verificação" to="." method="_on_raio_de_verificação_body_exited"]
+[connection signal="isPolite_check" from="Sprite2D/raio_de_verificação" to="." method="_on_raio_de_verificação_is_polite_check"]
+[connection signal="randomize_punishment" from="Sprite2D/hitbox" to="." method="_on_hitbox_randomize_punishment"]

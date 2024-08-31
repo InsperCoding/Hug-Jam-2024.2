@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://dmyqukdxanu7q"]
+[gd_scene load_steps=43 format=4 uid="uid://dmyqukdxanu7q"]
 
 [ext_resource type="Texture2D" uid="uid://bi7mb07dodj4a" path="res://assets/Objects/grass.png" id="1_7ggx2"]
 [ext_resource type="Script" path="res://src/Main/main.gd" id="1_h8q3d"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cj4lbey5sgeub" path="res://nya.tscn" id="18_bro57"]
 [ext_resource type="Texture2D" uid="uid://dui7uergob75v" path="res://assets/World/tree.png" id="20_ljldi"]
 [ext_resource type="Texture2D" uid="uid://cjup0b4sm6jhy" path="res://assets/World/lago.png" id="22_5w12n"]
+[ext_resource type="PackedScene" uid="uid://bg64t60vjcvpx" path="res://src/Officer/police.tscn" id="23_86l3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqu6c"]
 texture = ExtResource("1_7ggx2")
@@ -336,6 +337,9 @@ texture = ExtResource("22_5w12n")
 [node name="StaticBody2D" type="StaticBody2D" parent="Lago"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lago/StaticBody2D"]
+position = Vector2(0, 117)
 shape = SubResource("CapsuleShape2D_sjser")
+
+[node name="Policia" parent="." instance=ExtResource("23_86l3c")]
 
 [connection signal="shoot" from="Player" to="Player/Shotgun" method="_on_player_shoot"]
